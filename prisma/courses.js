@@ -1,12 +1,13 @@
 import prisma from "./prisma";
-//get all courses
+
+// GET ALL COURSES
 export const getAllCourses = async () => {
   const courses = await prisma.course.findMany({});
 
   return courses;
 };
 
-//get a single courses
+// GET A SINGLE COURSE
 export const getSingleCourse = async (id) => {
   const course = await prisma.course.findUnique({
     where: { id },
