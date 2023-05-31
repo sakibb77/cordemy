@@ -1,3 +1,4 @@
+import Button from "@/components/Button";
 import { getSingleCourse } from "@/prisma/courses";
 import { currencyConverter } from "@/utils/currency";
 import React from "react";
@@ -14,22 +15,22 @@ const courseDetail = ({ course }) => {
         <div className="space-y-2">
           <h2 className="text-3xl font-semibold">{course.title}</h2>
           <p>
-            <span className="font-semibold">Instructor:</span>{" "}
+            <span className="font-semibold">Instructor:</span>
             {course.instructor}
           </p>
           <p>
-            <span className="font-semibold">Course Description:</span>{" "}
+            <span className="font-semibold">Course Description:</span>
             {course.description}
           </p>
           <p>
-            <span className="font-semibold">Entrolled Students:</span>{" "}
+            <span className="font-semibold">Entrolled Students:</span>
             {course.students}
           </p>
         </div>
 
         <div className="space-y-2">
           <p>
-            <span className="font-semibold">Course Duration:</span>{" "}
+            <span className="font-semibold">Course Duration:</span>
             {course.duration}
           </p>
           <p>
@@ -39,12 +40,12 @@ const courseDetail = ({ course }) => {
             Price: {currencyConverter(course.price)}
           </p>
 
-          <button
+          <Button
             // onClick={handleEnroll}
+            href={`/checkout/${course.id}`}
+            placeholder="enroll now"
             className="bg-black text-white py-3 rounded-lg w-full hover:bg-gray-700 duration-300"
-          >
-            Enroll Now
-          </button>
+          ></Button>
         </div>
       </div>
     </div>

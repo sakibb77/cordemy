@@ -2,7 +2,7 @@ import SectionHeader from "@/components/SectionHeader";
 import CourseItem from "@/components/CourseItem";
 import { getAllCourses } from "@/prisma/courses";
 
-const coursesPage = ({ courses }) => {
+const CoursesPage = ({ courses }) => {
   return (
     <div className="wrapper py-10">
       <SectionHeader
@@ -23,7 +23,7 @@ const coursesPage = ({ courses }) => {
   );
 };
 
-export default coursesPage;
+export default CoursesPage;
 
 export const getServerSideProps = async () => {
   const courses = await getAllCourses();
